@@ -6917,6 +6917,7 @@ class AzureKubernetesServiceScenarioTest(ScenarioTest):
                      '--ssh-key-value={ssh_key_value}'
         self.cmd(create_cmd, checks=[
             self.check('provisioningState', 'Succeeded'),
+            self.check('agentPoolProfiles[0].vmSize', 'Standard_D4s_v3'),
         ])
 
         # nodepool added
@@ -6928,13 +6929,13 @@ class AzureKubernetesServiceScenarioTest(ScenarioTest):
                  '-c 1 ',
                  checks=[
                      self.check('provisioningState', 'Succeeded'),
-                     self.check('agentPoolProfiles[1].VMSize', 'Standard_D4s_v3'),
                  ])
 
         # cluster updated with assign-identity
         self.cmd('aks update '
                  '--resource-group={resource_group} '
                  '--name={name} '
+                 '--enable-managed-identity '
                  '--assign-identity {identity} ',
                  checks=[
                      self.check('provisioningState', 'Succeeded'),
