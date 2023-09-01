@@ -114,6 +114,7 @@ from azext_aks_preview._validators import (
     validate_cluster_snapshot_id,
     validate_create_parameters,
     validate_crg_id,
+    validate_crg_id_update,
     validate_custom_ca_trust_certificates,
     validate_defender_config_parameter,
     validate_defender_disable_and_enable_parameters,
@@ -658,6 +659,7 @@ def load_arguments(self, _):
         c.argument('disable_custom_ca_trust', options_list=['--disable-custom-ca-trust', '--dcat'], action='store_true')
         c.argument('allowed_host_ports', validator=validate_allowed_host_ports, is_preview=True)
         c.argument('asg_ids', validator=validate_application_security_groups, is_preview=True)
+        c.argument('crg_id', validator=validate_crg_id_update, is_preview=True)
 
     with self.argument_context('aks nodepool upgrade') as c:
         c.argument('max_surge', validator=validate_max_surge)
