@@ -6936,6 +6936,7 @@ class AzureKubernetesServiceScenarioTest(ScenarioTest):
                  '--resource-group={resource_group} '
                  '--name={name} '
                  '--enable-managed-identity '
+                 '--yes ' 
                  '--assign-identity {identity} ',
                  checks=[
                      self.check('provisioningState', 'Succeeded'),
