@@ -596,8 +596,6 @@ def validate_crg_id_update(namespace):
     if namespace.crg_id is not None:
         if namespace.crg_id == '':
             raise CLIError("--crg-id can't be set empty.")
-        if namespace.assign_identity is None:
-            raise CLIError("--assign-identity must be set when updating an existing nodepool with CRG.")
         from msrestazure.tools import is_valid_resource_id
         if not is_valid_resource_id(namespace.crg_id):
             raise InvalidArgumentValueError(

@@ -6947,8 +6947,7 @@ class AzureKubernetesServiceScenarioTest(ScenarioTest):
                  '--resource-group={resource_group} '
                  '--cluster-name={name} '
                  '--name={node_pool_name_second} '
-                 '--crg-id={crg_id} '
-                 '-c 1 ',
+                 '--crg-id={crg_id} ',
                  checks=[
                      self.check('provisioningState', 'Succeeded'),
                      self.check('agentPoolProfiles[1].CapacityReservationGroup.Id', '/subscriptions/26fe00f8-9173-4872-9134-bb1d2e00343a/resourceGroups/STAGING-CRG-RG/providers/Microsoft.Compute/capacityReservationGroups/crg-3'),
