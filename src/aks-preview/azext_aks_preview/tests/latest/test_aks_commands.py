@@ -6950,7 +6950,7 @@ class AzureKubernetesServiceScenarioTest(ScenarioTest):
                  '--crg-id={crg_id} ',
                  checks=[
                      self.check('provisioningState', 'Succeeded'),
-                     self.check('agentPoolProfiles[1].CapacityReservationGroup.Id', '/subscriptions/26fe00f8-9173-4872-9134-bb1d2e00343a/resourceGroups/STAGING-CRG-RG/providers/Microsoft.Compute/capacityReservationGroups/crg-3'),
+                     self.check('capacityReservationGroupId', '/subscriptions/26fe00f8-9173-4872-9134-bb1d2e00343a/resourceGroups/STAGING-CRG-RG/providers/Microsoft.Compute/capacityReservationGroups/crg-3'),
                  ])
 
         # delete
