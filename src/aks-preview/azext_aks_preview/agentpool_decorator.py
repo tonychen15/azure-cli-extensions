@@ -553,7 +553,7 @@ class AKSPreviewAgentPoolUpdateDecorator(AKSAgentPoolUpdateDecorator):
         
         crg_id = self.context.get_crg_id()
         if crg_id is not None:
-            agentpool.capacityReservationGroupId = crg_id
+            agentpool.capacity_reservation_group_id = crg_id
         return agentpool
 
     def update_agentpool_profile_preview(self, agentpools: List[AgentPool] = None) -> AgentPool:
