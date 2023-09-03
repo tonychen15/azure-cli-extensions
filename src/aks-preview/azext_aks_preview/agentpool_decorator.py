@@ -452,7 +452,11 @@ class AKSPreviewAgentPoolAddDecorator(AKSAgentPoolAddDecorator):
         """
         self._ensure_agentpool(agentpool)
         crg_id = self.context.get_crg_id()
+<<<<<<< HEAD
         if crg_id is not None:
+=======
+        if crg_id is not none:
+>>>>>>> 0991236fb8b9dd4143b40b51b1cc3145099bf414
             agentpool.capacity_reservation_group_id = crg_id
             
         return agentpool 
